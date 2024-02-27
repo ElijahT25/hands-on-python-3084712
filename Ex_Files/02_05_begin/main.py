@@ -6,9 +6,8 @@ STAGING = "staging"
 CODE_SPACE = "code_space"
 LOCAL = "local"
 
-current_env = os.environ.get("ENV_NAME", DEVELOPMENT)
 
-if current_env == DEVELOPMENT:
+if (current_env := os.environ.get("ENV_NAME", DEVELOPMENT)) == DEVELOPMENT:
     print("Development environment")
 elif current_env == PRODUCTION:
     print("Production environment")
